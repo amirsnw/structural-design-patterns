@@ -14,12 +14,16 @@ public class Directory extends File {
 
     @Override
     public void ls() {
-        children.forEach(file -> {
-            if (file.getParent() != null) {
-                System.out.print(file.getParent().getName() + " >> ");
-                file.ls();
+        File file;
+        for (int i = 0 ; i < children.size() ; i++) {
+            file = children.get(i);
+            System.out.print(file.getParent().getName() + " >> ");
+            file.ls();
+
+            if (this.getParent() != null && i < children.size() - 1) {
+                System.out.print(this.getName().replaceAll(".", " ") + "    ");
             }
-        });
+        }
     }
 
     public void addFile(File file) {

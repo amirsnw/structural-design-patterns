@@ -15,14 +15,17 @@ public class Client {
 	// Client builds tree using leaf and composites
 	private static File createTreeOne() {
 		File file1 = new BinaryFile("File1", 1000);
+		File file11 = new BinaryFile("File11", 1020);
 		Directory dir1 = new Directory("dir1");
 		dir1.addFile(file1);
+		dir1.addFile(file11);
 
 		File file2 = new BinaryFile("file2", 2000);
 		File file3 = new BinaryFile("file3", 150);
 		Directory dir2 = new Directory("dir2");
 		dir2.addFile(file2);
 		dir2.addFile(file3);
+		dir2.addFile(dir1);
 		dir2.addFile(dir1);
 		return dir2;
 	}
