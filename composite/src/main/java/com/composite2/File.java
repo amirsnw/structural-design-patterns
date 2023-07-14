@@ -1,7 +1,7 @@
 package com.composite2;
 
 // The component base class for composite pattern
-// defines operations applicable for both leaf
+// defines operations applicable for leaf
 // composite and leaf node extend from this class.
 public abstract class File {
 
